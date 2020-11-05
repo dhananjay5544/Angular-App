@@ -1,0 +1,21 @@
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 94px 10px 100px;
+  background: rgb(54, 124, 255);
+  color: white;
+  height: 20vh;
+}
+.main h1 {
+  margin: 0;
+}
+
+.mat-elevation-z8 {
+  width: 90%;
+  margin: auto;
+  margin-top: -55px;
+}
+.full-width-table {
+  width: 100%;
+}

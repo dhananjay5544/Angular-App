@@ -1,0 +1,55 @@
+<div class="main">
+  <a
+    mat-icon-button
+    routerLink="/"
+    aria-label="Example icon button with a vertical three dot icon"
+  >
+    <mat-icon>keyboard_backspace</mat-icon>
+  </a>
+  <a mat-raised-button>Save product</a>
+</div>
+<mat-card class="addCard">
+  <mat-form-field appearance="outline" class="inputfield">
+    <mat-label>Product Name</mat-label>
+    <input matInput type="text" />
+  </mat-form-field>
+  <br />
+  <mat-form-field appearance="outline" class="inputfield">
+    <mat-label>Category</mat-label>
+    <input matInput type="text" />
+  </mat-form-field>
+  <br />
+  <mat-form-field appearance="outline" class="inputfield">
+    <mat-label>Tags</mat-label>
+    <mat-chip-list #chipList aria-label="Fruit selection">
+      <mat-chip
+        *ngFor="let fruit of fruits"
+        [selectable]="selectable"
+        [removable]="removable"
+        (removed)="remove(fruit)"
+      >
+        {{ fruit.name }}
+        <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+      </mat-chip>
+      <input
+        [matChipInputFor]="chipList"
+        [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+        [matChipInputAddOnBlur]="addOnBlur"
+        (matChipInputTokenEnd)="add($event)"
+      />
+    </mat-chip-list>
+  </mat-form-field>
+  <br />
+  <mat-form-field appearance="outline" class="inputfield">
+    <mat-label>Quantity</mat-label>
+    <input matInput type="number" />
+  </mat-form-field>
+  <br />
+  <mat-form-field appearance="outline" class="inputfield">
+    <mat-label>Price</mat-label>
+    <input matInput type="number" />
+  </mat-form-field>
+  <br />
+  <mat-slide-toggle>is Active</mat-slide-toggle>
+  <br />
+</mat-card>
